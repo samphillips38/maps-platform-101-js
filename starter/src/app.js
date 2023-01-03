@@ -56,10 +56,22 @@ function displayMap() {
             });
         }
     })
-    google.maps.event.addListener(map, 'zoom_changed', () => {
-        // Get the current zoom level of the map
+    // google.maps.event.addListener(map, 'zoom_changed', () => {
+    //     // Get the current zoom level of the map
+    //     hm.resetWalkingPoints();
+    // });
+    // Refresh button clicked
+    const refreshButton = document.getElementById('Refresh Button');
+    refreshButton.addEventListener('click', () => {
         hm.resetWalkingPoints();
     });
 
+    // Toggle relative
+    const relativeBbutton = document.getElementById('Relative Button');
+    relativeBbutton.addEventListener('click', () => {
+        hm.toggleRelative();
+    });
     return map;
 }
+
+// Make other stuff (button, input text etc)
